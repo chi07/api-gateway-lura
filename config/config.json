@@ -1,0 +1,76 @@
+{
+  "version": 3,
+  "name": "Backend APIs Gateway",
+  "port": 8080,
+  "timeout": "10s",
+  "cache_ttl": "3600s",
+  "host": [
+    "https://account.api.backend.vn",
+    "https://courses.api.backend.vn",
+    "https://post.api.backend.vn",
+    "https://forum.api.backend.vn",
+    "https://email.api.backend.vn"
+  ],
+  "endpoints": [
+    {
+      "endpoint": "/forum/health",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/health",
+          "host": [
+            "https://forum.api.backend.vn"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/emails/health",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/health",
+          "host": [
+            "https://email.api.backend.vn"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/otp/health",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/health",
+          "host": [
+            "https://otp.api.backend.vn"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/posts/health",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/health",
+          "host": [
+            "https://post.api.backend.vn"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/courses/health",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/health",
+          "host": [
+            "https://course.api.backend.vn"
+          ]
+        }
+      ]
+    }
+  ]
+}
